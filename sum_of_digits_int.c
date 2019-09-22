@@ -11,6 +11,4 @@ int a,rem,sum=0;
     }
 
     printf("Sum Of All Digits Is %d.",sum);
-
-
 }
