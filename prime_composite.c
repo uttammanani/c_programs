@@ -1,27 +1,29 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+int main()
 {
-    int i,n,c=0;
-    printf ("Enter a number \n");
-    scanf ("%d",&n);
-    for (i=1;i<=n;i++)
+    int n, i, flag = 0;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    for(i = 2; i <= n/2; ++i)
     {
-        if(n%i==0)
-        c=c+1;
-    }
-    if (c==2)
-    printf ("The number is PRIME");
-    else
-    {
-    printf ("The number is COMPOSITE\n");
-
-    printf("Factors of %d are: ", n);
-    for(i=1;i<=n;++i)
-    {
-        if (n%i==0)
+        // condition for nonprime number
+        if(n%i == 0)
         {
-            printf("%d ",i);
+            flag = 1;
+            break;
         }
     }
+    if (n == 1) 
+    {
+      printf("1 is neither a prime nor a composite number.");
     }
+    else 
+    {
+        if (flag == 0)
+          printf("%d is a prime number.", n);
+        else
+          printf("%d is not a prime number.", n);
+    }
+    
+    return 0;
 }
